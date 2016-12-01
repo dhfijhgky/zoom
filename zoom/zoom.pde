@@ -43,8 +43,9 @@ void setup() {
   shortest_side = width < height ? width : height;
   
   // Instantiates a Manager, Serial, and LinkedList.
-  port = new Serial(this, Serial.list()[3], 6557);
-  println(Serial.list()[3]);
+  // These two lines will throw an error without an Arduino connected, and will probably have to have the element number adjusted otherwise.
+  //port = new Serial(this, Serial.list()[3], 6557);
+  //println(Serial.list()[3]);
   data = new LinkedList();
   manager = new Manager(data);
   
@@ -70,6 +71,7 @@ void draw() {
 
 
 // ---- ARDUINO CODE ---- 
+// This is the code that was uploaded to the Arduino interpretting the potentiometer data.
 // This reads analog voltage from a potentiometer and gives us a number between 0 and 1023.
 // Manager.move() will read the jumbled string the Arduino sends and convert it into a usable number.
 
