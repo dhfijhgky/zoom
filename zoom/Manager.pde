@@ -57,6 +57,8 @@ class Manager {
     // You would push up at the top-most controller position, and down at the bottom.
     // The second half works with a keyboard. Left and right arrow keys control the speed, spacebar pauses it.
     
+    // ---- FOR USE WITH ARDUINO BASED CONTROLLER ----
+    // If you uncomment this, you will also need to uncomment lines 47-48 in zoom.pde.
     /*
     if (port.available() > 0) {
       port_string = port.readString();
@@ -81,6 +83,11 @@ class Manager {
       }
     }
     */
+    // ---- ---- ---- ---- ----
+    
+    
+    
+    // ---- FOR USE WITH KEYBOARD ----
     if (keyPressed) {
       if (keyCode == 37) {
         move_speed += .01;
@@ -91,6 +98,7 @@ class Manager {
       }
       set_move();
     }
+    // ---- ---- ---- ---- ----
   }
   
   void set_move() {
